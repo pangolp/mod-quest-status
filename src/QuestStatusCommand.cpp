@@ -29,12 +29,12 @@ class QuestStatusCommand : public CommandScript
         {
             static std::vector<ChatCommand> commandTable
             {
-                { "id", SEC_PLAYER, false, &HandleQuestStatusByIdCommand, "" }
+                { "", SEC_MODERATOR, false, &HandleQuestStatusByIdCommand, "" }
             };
 
             static std::vector<ChatCommand> questCommandTable =
             {
-                { "qs",    SEC_PLAYER, false, nullptr, "", commandTable}
+                { "qs",    SEC_MODERATOR, false, nullptr, "", commandTable}
             };
 
             return questCommandTable;
