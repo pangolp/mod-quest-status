@@ -14,7 +14,7 @@ public:
 
     void OnLogin(Player* player) override
     {
-        if (!sConfigMgr->GetOption<bool>("AnnouncePlayer.enable", true))
+        if (sConfigMgr->GetOption<bool>("AnnouncePlayer.enable", true))
         {
             ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Quest Status |rmodule.");
         }
