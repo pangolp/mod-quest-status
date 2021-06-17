@@ -8,15 +8,17 @@
 
 class AnnouncePlayer : public PlayerScript{
 
-	public:
+public:
 
-	    AnnouncePlayer() : PlayerScript("AnnouncePlayer") { }
+    AnnouncePlayer() : PlayerScript("AnnouncePlayer") { }
 
-	    void OnLogin(Player* player) override {
-	        if (sConfigMgr->GetBoolDefault("AnnouncePlayer.enable", true)) {
-	            ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Quest Status |rmodule.");
-	    }
-	}
+    void OnLogin(Player* player) override
+    {
+        if (!sConfigMgr->GetOption<bool>("AnnouncePlayer.enable", true))
+        {
+            ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Quest Status |rmodule.");
+        }
+    }
 };
 
 class QuestStatusCommand : public CommandScript
