@@ -98,7 +98,8 @@ class QuestStatusCommand : public CommandScript
 
 };
 
-void AddQuestStatusScripts() {
+void AddSC_Quest_Status_Scripts()
+{
     new AnnouncePlayer();
     new QuestStatusCommand();
 }
