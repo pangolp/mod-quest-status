@@ -9,7 +9,6 @@
 class AnnouncePlayer : public PlayerScript{
 
 public:
-
     AnnouncePlayer() : PlayerScript("AnnouncePlayer") { }
 
     void OnLogin(Player* player) override
