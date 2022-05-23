@@ -1,3 +1,4 @@
+#include "loader.h"
 #include "AccountMgr.h"
 #include "Chat.h"
 #include "Player.h"
@@ -5,6 +6,9 @@
 #include "Config.h"
 #include "Language.h"
 
+#if AC_COMPILER == AC_COMPILER_GNU
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
 
 class AnnouncePlayer : public PlayerScript{
 
@@ -15,10 +19,34 @@ public:
     {
         if (sConfigMgr->GetOption<bool>("AnnouncePlayer.enable", true))
         {
-            ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Quest Status |rmodule.");
+            std::string messageModule = "";
+            switch (player->GetSession()->GetSessionDbLocaleIndex())
+            {
+                case LOCALE_enUS:
+                case LOCALE_koKR:
+                case LOCALE_frFR:
+                case LOCALE_deDE:
+                case LOCALE_zhCN:
+                case LOCALE_zhTW:
+                case LOCALE_ruRU:
+                {
+                    messageModule = "This server is running the |cff4CFF00Quest Status |rmodule.";
+                    break;
+                }
+                case LOCALE_esES:
+                case LOCALE_esMX:
+                {
+                    messageModule = "Este servidor está ejecutando el módulo |cff4CFF00Quest Status|r";
+                }
+                default:
+                    break;
+            }
+            ChatHandler(player->GetSession()).SendSysMessage(messageModule);
         }
     }
 };
+
+using namespace Acore::ChatCommands;
 
 class QuestStatusCommand : public CommandScript
 {
@@ -26,20 +54,19 @@ class QuestStatusCommand : public CommandScript
 
         QuestStatusCommand() : CommandScript("QuestStatusCommand") { }
 
-        std::vector<ChatCommand> GetCommands() const override
+        ChatCommandTable GetCommands() const override
         {
-            static std::vector<ChatCommand> commandTable
+            static ChatCommandTable commandTable =
             {
                 { "", SEC_MODERATOR, false, &HandleQuestStatusByIdCommand, "" }
             };
 
-            static std::vector<ChatCommand> questCommandTable =
+            static ChatCommandTable questCommandTable =
             {
-                { "qs",    SEC_MODERATOR, false, nullptr, "", commandTable}
+                { "qs", SEC_MODERATOR, true, nullptr, "", commandTable }
             };
 
             return questCommandTable;
-
         }
 
         static bool HandleQuestStatusByIdCommand(ChatHandler* handler, const char* args)
@@ -96,10 +123,9 @@ class QuestStatusCommand : public CommandScript
 
             return true;
         }
-
 };
 
-void AddSC_Quest_Status_Scripts()
+void AddQuestStatusCommandScripts()
 {
     new AnnouncePlayer();
     new QuestStatusCommand();

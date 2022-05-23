@@ -1,6 +1,6 @@
-void AddSC_Quest_Status_Scripts();
+void AddQuestStatusCommandScripts();
 
-void AddQuestStatusScripts()
+void Addmod_quest_statusScripts()
 {
-    AddSC_Quest_Status_Scripts();
+    AddQuestStatusCommandScripts();
 }
