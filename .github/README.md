@@ -1,4 +1,8 @@
+# ![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) AzerothCore
+
 # Module: Quest Status
+
+- Latest build status with azerothcore: [![Build Status](https://github.com/pangolp/mod-quest-status/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/pangolp/mod-quest-status)
 
 [English](README.md) | [Español](README_ES.md)
 
