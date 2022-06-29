@@ -2,7 +2,9 @@
 
 # Module: Quest Status
 
-- Latest build status with azerothcore: [![Build Status](https://github.com/pangolp/mod-quest-status/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/pangolp/mod-quest-status)
+- Latest build status with azerothcore
+
+[![Build Status](https://github.com/pangolp/mod-quest-status/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/pangolp/mod-quest-status)
 
 [English](README.md) | [Español](README_ES.md)
 
