@@ -11,3 +11,11 @@ In order to use the module, you need to have the latest version of the [AzerothC
 3. Using cmake, you build the solution.
 
 4. Finally, run the SQL inside the `data` folder or use the `db_assembler` to incorporate the SQL files from the module.
+
+## Without using GIT
+
+If you don't use git, the process is similar to the one above, the only difference is that instead of cloning the repository, you will download the `.zip` and add it to the `modules` folder inside the emulator.
+
+Note: Please note, that the folder name should be in this case: `mod-quest-status`, however, when you download the `.zip` the folder will be named: `mod-quest-status-master`. Rename the folder, removing the `-master` from the directory.
+
+We recommend using `git`. To have access to the updates that may arise, either because of problems within the module, or because the emulator api is updated, add commands, e.t.c.

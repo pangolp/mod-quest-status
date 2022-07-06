@@ -1,0 +1,16 @@
+# SQL files
+
+The SQL files, in this case, only need to be applied within the `world` database. Because what the command does, is to add a new command.
+
+```sql
+DELETE FROM `command` WHERE `name`='qs';
+
+INSERT INTO `command` (`name`, `security`, `help`) VALUES
+('qs', 1, 'Syntax: .qs #questID It allows the moderator, to know the status of a mission of a player or own, through the id.');
+```
+
+- `qs`: is the name of the command, because it refers to the name of the module, which is `quest status`. The idea was to have a short command, because the `macro` has a limit of 255 characters. That way, we can optimize much more the queries and search for more quests. Mainly in long quest chains, like `The Sons of Hodir`.
+
+- `security`: is 1, so that it can be run by almost every GM on the server. At one point, it was thought to add the possibility that the same player can inspect his account, or that of a friend / colleague, but it would be necessary to limit the use of the command, so that it is not executed all the time. At the moment, it is only for game masters, but if you want, you can change the security inside the SQL script, changing the 1 for a 0 and enable the command for all people.
+
+- `help`: This is the information displayed by the command, in case of using `help qs`.

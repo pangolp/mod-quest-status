@@ -20,4 +20,6 @@ hidden:
 ---
 
 requirements
+sql
+bugs-suggestions
 ```

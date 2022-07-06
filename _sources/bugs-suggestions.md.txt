@@ -1,0 +1,9 @@
+# Report errors or suggestions
+
+If you need to report bugs, or suggestions, you can do it inside the module, in the issues section. You will need to have a github account to do so. You can register for free by clicking on the following [link](https://github.com/signup).
+
+Then, once you have the account created, you have to log into the platform, and go to the following [link](https://github.com/pangolp/mod-quest-status/issues).
+
+If you want to report a bug, try to be as descriptive as possible, since the information you provide is what we will use to solve the problem.
+
+If what you want to create is a suggestion, please provide all the necessary information and keep in mind that the module is public and community, so any developer, including you, can open a pull request for that new feature you want to implement.
