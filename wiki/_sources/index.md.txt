@@ -1,0 +1,23 @@
+# Home
+
+![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png)
+
+**AzerothCore Module: Quest Status**
+
+- Latest build status with azerothcore
+
+[![Build Status](https://github.com/pangolp/mod-quest-status/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/pangolp/mod-quest-status)
+
+**What is the module for?**
+
+It aims to assist the players, who eliminate quests and then don't know where in the chain they stayed. Focused mainly on reputational chains. You can make a macro with all the missions of a chain and inspect the player to know which one is missing. The module is a modification of the mission inspection command, but instead of searching by name, it searches by id, making the search much more precise.
+
+```{toctree}
+---
+caption: Install
+maxdepth: 1
+hidden:
+---
+
+requirements
+```

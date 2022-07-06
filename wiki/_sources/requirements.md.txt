@@ -1,0 +1,13 @@
+# Requirements
+
+In order to use the module, you need to have the latest version of the [AzerothCore emulator](https://github.com/azerothcore/azerothcore-wotlk).
+
+## Using GIT
+
+1. You must enter the folder where you have the emulator, for example: `cd ~/azerothcore` and then to the modules folder: `cd modules`.
+
+2. Then you have to clone the repository `git clone https://github.com/pangolp/mod-quest-status.git -b master`
+
+3. Using cmake, you build the solution.
+
+4. Finally, run the SQL inside the `data` folder or use the `db_assembler` to incorporate the SQL files from the module.
