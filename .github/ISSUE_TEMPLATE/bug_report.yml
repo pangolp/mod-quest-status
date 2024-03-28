@@ -1,74 +1,36 @@
 name: Bug report
 description: Create a bug report to help us improve.
+title: "Bug: "
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thank you for taking your time to fill out a bug report. Remember to fill out all fields including the title above. 
-        An issue that is not properly filled out will be closed.
-  - type: dropdown
-    id: client
-    attributes:
-      label: What client do you play on?
-      options:
-      - enGB
-      - enUS
-      - deDE
-      - esES
-      - esMX
-      - frFR
-      - ruRU
-      - other
-    validations:
-      required: true
-  - type: checkboxes
-    id: faction
-    attributes:
-      label: Faction
-      options:
-      - label: Alliance
-      - label: Horde
   - type: textarea
     id: current
     attributes:
       label: Current Behaviour
       description: |
-        Describe the bug in detail. Database to link spells, NPCs, quests etc: https://wowgaming.altervista.org/aowow/
+        Description of the problem or issue here.
+        Include entries of affected creatures / items / quests / spells etc.
+        If this is a crash, post the crashlog (upload to https://gist.github.com/) and include the link here.
+        Never upload files! Use GIST for text and YouTube for videos!
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Expected Blizzlike Behaviour
+      label: Expected Behaviour
       description: |
-        Describe how it should be working without the bug. Link to evidence if possible such as YouTube videos or WoWHead comments from the time.
+        Tell us what should happen instead.
     validations:
       required: true
-  - type: textarea
-    id: source
-    attributes:
-      label: Source
-      description: |
-        HEADS UP: include sources in your bug report which are relevant to the 3.3.5a game version, 
-        we will close any bug like "X should be changed to Y" reported without sources.
-    validations:
-      required: false
   - type: textarea
     id: reproduce
     attributes:
       label: Steps to reproduce the problem
       description: |
-        Describe precisely how to reproduce the bug so we can fix it or confirm its existence:
-        - Which commands to use? Which NPC to teleport to?
-        - Do we need to have debug flags on Cmake?
-        - Do we need to look at the console while the bug happens?
-        - Other steps
-        - Use the ingame commands to identify the unique GUID of an ore/herb/npc:    .npc info  /  .gobject near
+        What does someone else need to do to encounter the same bug?
       placeholder: |
-        1. 
-        2. 
-        3. 
-        4. 
+        1. Step 1
+        2. Step 2
+        3. Step 3
     validations:
       required: true
   - type: textarea
@@ -76,9 +38,7 @@ body:
     attributes:
       label: Extra Notes
       description: |
-        Any information that can help the developers to identify and fix the issue should be put here.
-        Examples:
-        Links to items/NPCs/quests from https://wowgaming.altervista.org/aowow/
+        Do you have any extra notes that can help solve the issue that does not fit any other field?
       placeholder: |
         None
     validations:
@@ -87,26 +47,26 @@ body:
     id: commit
     attributes:
       label: AC rev. hash/commit
-      placeholder: |
-        https://github.com/chromiecraft/azerothcore-wotlk/commit/e92428940539d178e08012db6e2681690d2308aa
+      description: |
+        Copy the result of the `.server debug` command (if you need to run it from the client get a prat addon)
     validations:
       required: true
-  - type: dropdown
+  - type: input
     id: os
     attributes:
       label: Operating system
-      options:
-      - Windows
-      - Linux
-      - Mac OS
-      - other
+      description: |
+        The Operating System the Server is running on.
+        i.e. Windows 11 x64, Debian 10 x64, macOS 12, Ubuntu 20.04
     validations:
       required: true
   - type: textarea
-    id: customizations
+    id: custom
     attributes:
-      label: Customizations
-      value: |
+      label: Custom changes or Modules
+      description: |
+        List which custom changes or modules you have applied, i.e. Eluna module, etc.
+      placeholder: |
         None
     validations:
       required: false

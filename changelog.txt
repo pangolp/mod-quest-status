@@ -1,3 +1,11 @@
+[2024-03-28]
+- Update the module to the latest version of the emulator.
+- Modify the way you write commands.
+- Add suggestion templates.
+- Add pull request template
+- Modify file names
+- Add header to better organize the methods.
+
 [2022-06-29]
 - I update the emulator to work with the latest AzerothCore api.
 - An issue template is added, to report bugs.

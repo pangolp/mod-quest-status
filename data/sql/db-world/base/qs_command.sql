@@ -1,4 +1,3 @@
-
 DELETE FROM `command` WHERE `name`='qs';
 
 INSERT INTO `command` (`name`, `security`, `help`) VALUES
